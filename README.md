@@ -21,8 +21,8 @@ A modern, responsive landing page for an authentic Afghan restaurant in Khanabad
 ```
 shakhah-nabat-landing/
 ├── index.html          # Main landing page
-├── styles.css          # Custom styles and animations
-├── script.js           # JavaScript functionality
+├── assets/css/styles.css          # Custom styles and animations
+├── assets/js/script.js           # JavaScript functionality
 ├── robots.txt          # SEO robots file
 ├── sitemap.xml         # XML sitemap
 └── README.md           # This file
