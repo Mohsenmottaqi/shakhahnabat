@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHAKHAH NABAT Restaurant | Authentic Afghan Cuisine in Khanabad | رستوران شاخه نبات</title>
+    <meta name="description" content="Experience authentic Afghan cuisine at SHAKHAH NABAT Restaurant in Khanabad, Kunduz. Fresh ingredients, traditional recipes, and warm hospitality. Order online now!">
+    <meta name="keywords" content="Afghan restaurant, Khanabad restaurant, Kabuli Pulao, Afghan food, Kunduz dining, authentic cuisine, halal food, traditional recipes">
+    <meta name="author" content="S. M. Mottaqi">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://shakhahnabat.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shakhahnabat.com">
+    <meta property="og:title" content="SHAKHAH NABAT Restaurant - Authentic Afghan Cuisine">
+    <meta property="og:description" content="Experience authentic Afghan cuisine with fresh ingredients and traditional recipes in Khanabad, Kunduz.">
+    <meta property="og:image" content="https://shakhahnabat.com/images/hero-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://shakhahnabat.com">
+    <meta property="twitter:title" content="SHAKHAH NABAT Restaurant - Authentic Afghan Cuisine">
+    <meta property="twitter:description" content="Experience authentic Afghan cuisine with fresh ingredients and traditional recipes.">
+    <meta property="twitter:image" content="https://shakhahnabat.com/images/hero-image.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "SHAKHAH NABAT Restaurant",
+        "alternateName": "رستوران شاخه نبات",
+        "description": "Authentic Afghan restaurant serving traditional cuisine with fresh ingredients",
+        "url": "https://shakhahnabat.com",
+        "telephone": "+93-XXX-XXX-XXX",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Khanabad",
+            "addressLocality": "Kunduz",
+            "addressCountry": "Afghanistan"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "36.6789",
+            "longitude": "68.8658"
+        },
+        "openingHours": "Sa-Th 10:00-23:00, Fr 12:00-23:00",
+        "servesCuisine": ["Afghan", "International"],
+        "priceRange": "$$",
+        "acceptsReservations": true
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Vazirmatn:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'food-primary': '#F26E22',
+                        'food-sand': '#F2F2F2',
+                        'food-cocoa': '#594225',
+                        'food-chai': '#8C6645',
+                        'food-cream': '#FFF8E7',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'vazir': ['Vazirmatn', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-poppins">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 shadow-lg">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo Section -->
+                <div class="logo-area flex items-center gap-3">
+                    <span class="text-3xl">🍽️</span>
+                    <div>
+                        <h1 class="text-lg sm:text-xl font-bold bg-gradient-to-r from-food-primary via-food-chai to-food-cocoa bg-clip-text text-transparent leading-tight">
+                            SHAKHAH NABAT
+                        </h1>
+                        <span class="block text-xs text-gray-600 font-vazir">رستوران شاخه نبات</span>
+                    </div>
+                </div>
+
+                <!-- Right Side: Menu + Language -->
+                <div class="flex items-center gap-8">
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center gap-8">
+                        <a href="#home" class="nav-link text-sm" data-en="Home" data-fa="خانه">Home</a>
+                        <a href="#menu" class="nav-link text-sm" data-en="Menu" data-fa="منو">Menu</a>
+                        <a href="#specialties" class="nav-link text-sm" data-en="Specialties" data-fa="غذاهای ویژه">Specialties</a>
+                        <a href="#about" class="nav-link text-sm" data-en="About" data-fa="درباره ما">About</a>
+                        <a href="#contact" class="nav-link text-sm" data-en="Contact" data-fa="تماس">Contact</a>
+                    </div>
+                    
+                    <!-- Language Toggle -->
+                    <button onclick="toggleLanguage()" class="px-4 py-2 text-sm bg-gradient-to-r from-food-primary to-food-chai text-white rounded-full font-semibold hover:scale-105 transition-transform">
+                        <span class="lang-text">فارسی</span>
+                    </button>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2" onclick="toggleMobileMenu()" id="mobileMenuBtn">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col gap-3 pt-3 border-t border-gray-200">
+                    <a href="#home" class="nav-link text-sm py-2" data-en="Home" data-fa="خانه" onclick="toggleMobileMenu()">Home</a>
+                    <a href="#menu" class="nav-link text-sm py-2" data-en="Menu" data-fa="منو" onclick="toggleMobileMenu()">Menu</a>
+                    <a href="#specialties" class="nav-link text-sm py-2" data-en="Specialties" data-fa="غذاهای ویژه" onclick="toggleMobileMenu()">Specialties</a>
+                    <a href="#about" class="nav-link text-sm py-2" data-en="About" data-fa="درباره ما" onclick="toggleMobileMenu()">About</a>
+                    <a href="#contact" class="nav-link text-sm py-2" data-en="Contact" data-fa="تماس" onclick="toggleMobileMenu()">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-food-primary/90 via-food-chai/85 to-food-cocoa/80">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1920&q=80" 
+                 alt="Restaurant food" 
+                 class="w-full h-full object-cover mix-blend-overlay opacity-50">
+        </div>
+        
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-20 h-20 bg-food-primary/30 rounded-full blur-2xl animate-float"></div>
+            <div class="absolute top-40 right-20 w-32 h-32 bg-food-chai/30 rounded-full blur-3xl animate-float-delayed"></div>
+            <div class="absolute bottom-20 left-1/4 w-24 h-24 bg-food-cocoa/30 rounded-full blur-2xl animate-float"></div>
+        </div>
+
+        <div class="container mx-auto px-6 lg:px-12 relative z-10">
+            <div class="text-center text-white animate-fade-in-up">
+                <div class="mb-6 animate-bounce-slow">
+                    <span class="text-6xl">🍕🍔🍲</span>
+                </div>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-2xl px-4" 
+                    data-en="Welcome to SHAKHAH NABAT" 
+                    data-fa="به رستوران شاخه نبات خوش آمدید">
+                    <span class="text-white" data-en="Welcome to " data-fa="به رستوران ">Welcome to </span>
+                    <span class="text-yellow-300 font-extrabold" data-en="SHAKHAH NABAT" data-fa="شاخه نبات">SHAKHAH NABAT</span>
+                </h1>
+                <p class="text-lg sm:text-xl md:text-2xl mb-4 font-light px-4" 
+                   data-en="Authentic Afghan & International Cuisine" 
+                   data-fa="غذاهای اصیل افغانی و بین المللی">
+                    Authentic Afghan & International Cuisine
+                </p>
+                <div class="flex items-center justify-center gap-2 text-base md:text-lg mb-8 px-4">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span data-en="Kunduz, Khanabad" data-fa="کندز، بندر خان آباد">Kunduz, Khanabad</span>
+                </div>
+                <div class="flex flex-wrap gap-4 justify-center px-4 hero-buttons">
+                    <a href="#contact" class="px-8 py-4 bg-white text-food-primary font-bold rounded-full shadow-2xl hover:scale-110 hover:rotate-2 transition-all duration-300" 
+                            data-en="Order Now" data-fa="سفارش دهید">
+                        Order Now
+                    </a>
+                    <a href="#menu" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-food-primary transition-all duration-300" 
+                            data-en="View Menu" data-fa="مشاهده منو">
+                        View Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Menu Categories Section -->
+    <section id="menu" class="py-20 md:py-28 bg-food-cream">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4 px-4" data-en="Our Menu" data-fa="منوی ما">
+                    Our Menu
+                </h2>
+                <p class="text-lg md:text-xl text-gray-600 px-4" data-en="Discover our delicious selection" data-fa="مجموعه خوشمزه ما را کشف کنید">
+                    Discover our delicious selection
+                </p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-12 px-4">
+                <button onclick="showCategory('all')" class="category-btn active-category px-6 py-3 text-sm rounded-full font-semibold transition-all" data-en="All" data-fa="همه">All</button>
+                <button onclick="showCategory('afghan')" class="category-btn px-6 py-3 text-sm rounded-full font-semibold transition-all" data-en="Afghan Food" data-fa="غذای افغانی">Afghan Food</button>
+                <button onclick="showCategory('pizza')" class="category-btn px-6 py-3 text-sm rounded-full font-semibold transition-all" data-en="Pizza" data-fa="پیتزا">Pizza</button>
+                <button onclick="showCategory('fastfood')" class="category-btn px-6 py-3 text-sm rounded-full font-semibold transition-all" data-en="Fast Food" data-fa="فست فود">Fast Food</button>
+                <button onclick="showCategory('natural')" class="category-btn px-6 py-3 text-sm rounded-full font-semibold transition-all" data-en="Healthy" data-fa="سالم">Healthy</button>
+            </div>
+
+            <!-- Food Items Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Afghan Food Items -->
+                <div class="food-card afghan" data-category="afghan">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=500&q=80" 
+                             alt="Kabuli Pulao" 
+                             class="w-full h-44 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 p-4 text-white">
+                                <button class="px-3 py-1.5 bg-food-primary rounded-full text-sm font-semibold hover:bg-food-chai transition" data-en="Order Now" data-fa="سفارش">Order Now</button>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-food-primary text-white px-3 py-1 rounded-full text-xs font-bold" data-en="Popular" data-fa="محبوب">Popular</div>
+                    </div>
+                    <div class="p-3 bg-white rounded-b-xl">
+                        <h3 class="text-sm font-bold text-gray-800 mb-1" data-en="Kabuli Pulao" data-fa="کابلی پلو">Kabuli Pulao</h3>
+                        <p class="text-gray-600 text-xs mb-2 line-clamp-2" data-en="Traditional Afghan rice with lamb" data-fa="برنج افغانی با گوشت گوسفند">Traditional Afghan rice with lamb</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base font-bold text-food-primary">320 AFN</span>
+                            <div class="flex text-yellow-400 text-xs">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-card afghan" data-category="afghan">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=500&q=80" 
+                             alt="Mantu" 
+                             class="w-full h-44 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 p-4 text-white">
+                                <button class="px-3 py-1.5 bg-food-primary rounded-full text-sm font-semibold hover:bg-food-chai transition" data-en="Order Now" data-fa="سفارش">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-white rounded-b-xl">
+                        <h3 class="text-sm font-bold text-gray-800 mb-1" data-en="Mantu" data-fa="منتو">Mantu</h3>
+                        <p class="text-gray-600 text-xs mb-2 line-clamp-2" data-en="Afghan dumplings with yogurt" data-fa="کله جوش افغانی با ماست">Afghan dumplings with yogurt</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base font-bold text-food-primary">260 AFN</span>
+                            <div class="flex text-yellow-400 text-xs">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-card afghan" data-category="afghan">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500&q=80" 
+                             alt="Kebab" 
+                             class="w-full h-44 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 p-4 text-white">
+                                <button class="px-3 py-1.5 bg-food-primary rounded-full text-sm font-semibold hover:bg-food-chai transition" data-en="Order Now" data-fa="سفارش">Order Now</button>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold" data-en="Special" data-fa="ویژه">Special</div>
+                    </div>
+                    <div class="p-3 bg-white rounded-b-xl">
+                        <h3 class="text-sm font-bold text-gray-800 mb-1" data-en="Lamb Kebab" data-fa="کباب گوسفندی">Lamb Kebab</h3>
+                        <p class="text-gray-600 text-xs mb-2 line-clamp-2" data-en="Grilled lamb skewers with rice" data-fa="سیخ گوشت گوسفند با برنج">Grilled lamb skewers with rice</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base font-bold text-food-primary">380 AFN</span>
+                            <div class="flex text-yellow-400 text-xs">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pizza Items -->
+                <div class="food-card pizza" data-category="pizza">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80" 
+                             alt="Margherita Pizza" 
+                             class="w-full h-44 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 p-4 text-white">
+                                <button class="px-3 py-1.5 bg-food-primary rounded-full text-sm font-semibold hover:bg-food-chai transition" data-en="Order Now" data-fa="سفارش">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-white rounded-b-xl">
+                        <h3 class="text-sm font-bold text-gray-800 mb-1" data-en="Margherita Pizza" data-fa="پیتزا مارگاریتا">Margherita Pizza</h3>
+                        <p class="text-gray-600 text-xs mb-2 line-clamp-2" data-en="Fresh tomatoes, mozzarella, basil" data-fa="گوجه تازه، موزارلا، ریحان">Fresh tomatoes, mozzarella, basil</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base font-bold text-food-primary">280 AFN</span>
+                            <div class="flex text-yellow-400 text-xs">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-card pizza" data-category="pizza">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80" 
+                             alt="Pepperoni Pizza" 
+                             class="w-full h-44 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 p-4 text-white">
+                                <button class="px-3 py-1.5 bg-food-primary rounded-full text-sm font-semibold hover:bg-food-chai transition" data-en="Order Now" data-fa="سفارش">Order Now</button>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-food-primary text-white px-3 py-1 rounded-full text-xs font-bold" data-en="Popular" data-fa="محبوب">Popular</div>
+                    </div>
+                    <div class="p-3 bg-white rounded-b-xl">
+                        <h3 class="text-sm font-bold text-gray-800 mb-1" data-en="Pepperoni Pizza" data-fa="پیتزا پپرونی">Pepperoni Pizza</h3>
+                        <p class="text-gray-600 text-xs mb-2 line-clamp-2" data-en="Classic pepperoni with cheese" data-fa="پپرونی کلاسیک با پنیر">Classic pepperoni with cheese</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base font-bold text-food-primary">320 AFN</span>
+                            <div class="flex text-yellow-400 text-xs">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fast Food Items -->
+                <div class="food-card fastfood" data-category="fastfood">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&q=80" 
+                             alt="Burger" 
+                             class="w-full h-44 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 p-4 text-white">
+                                <button class="px-3 py-1.5 bg-food-primary rounded-full text-sm font-semibold hover:bg-food-chai transition" data-en="Order Now" data-fa="سفارش">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-white rounded-b-xl">
+                        <h3 class="text-sm font-bold text-gray-800 mb-1" data-en="Classic Burger" data-fa="برگر کلاسیک">Classic Burger</h3>
+                        <p class="text-gray-600 text-xs mb-2 line-clamp-2" data-en="Juicy beef patty with fresh veggies" data-fa="گوشت گاو آبدار با سبزیجات تازه">Juicy beef patty with fresh veggies</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base font-bold text-food-primary">220 AFN</span>
+                            <div class="flex text-yellow-400 text-xs">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-card fastfood" data-category="fastfood">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1630384082208-c8e27e3a5b33?w=500&q=80" 
+                             alt="Fried Chicken" 
+                             class="w-full h-44 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 p-4 text-white">
+                                <button class="px-3 py-1.5 bg-food-primary rounded-full text-sm font-semibold hover:bg-food-chai transition" data-en="Order Now" data-fa="سفارش">Order Now</button>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-food-primary text-white px-3 py-1 rounded-full text-xs font-bold" data-en="Hot" data-fa="داغ">Hot</div>
+                    </div>
+                    <div class="p-3 bg-white rounded-b-xl">
+                        <h3 class="text-sm font-bold text-gray-800 mb-1" data-en="Crispy Chicken" data-fa="مرغ سوخاری">Crispy Chicken</h3>
+                        <p class="text-gray-600 text-xs mb-2 line-clamp-2" data-en="Golden fried chicken pieces" data-fa="تکه های مرغ سرخ شده طلایی">Golden fried chicken pieces</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base font-bold text-food-primary">250 AFN</span>
+                            <div class="flex text-yellow-400 text-xs">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthy/Natural Food -->
+                <div class="food-card natural" data-category="natural">
+                    <div class="relative overflow-hidden rounded-xl shadow-lg group">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&q=80" 
+                             alt="Fresh Salad" 
+                             class="w-full h-44 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div class="absolute bottom-0 p-4 text-white">
+                                <button class="px-3 py-1.5 bg-food-primary rounded-full text-sm font-semibold hover:bg-food-chai transition" data-en="Order Now" data-fa="سفارش">Order Now</button>
+                            </div>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold" data-en="Healthy" data-fa="سالم">Healthy</div>
+                    </div>
+                    <div class="p-3 bg-white rounded-b-xl">
+                        <h3 class="text-sm font-bold text-gray-800 mb-1" data-en="Garden Salad" data-fa="سالاد باغ">Garden Salad</h3>
+                        <p class="text-gray-600 text-xs mb-2 line-clamp-2" data-en="Fresh organic vegetables" data-fa="سبزیجات ارگانیک تازه">Fresh organic vegetables</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-base font-bold text-food-primary">180 AFN</span>
+                            <div class="flex text-yellow-400 text-xs">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialties Section -->
+    <section id="specialties" class="py-20 md:py-28 bg-gradient-to-br from-food-primary via-food-chai to-food-cocoa">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16 text-white">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 px-4" data-en="Afghan Specialties" data-fa="غذاهای ویژه افغانی">
+                    Afghan Specialties
+                </h2>
+                <p class="text-lg md:text-xl px-4" data-en="Taste the authentic flavors of Afghanistan" data-fa="طعم واقعی افغانستان را بچشید">
+                    Taste the authentic flavors of Afghanistan
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&q=80" 
+                         alt="Qabuli Palau" 
+                         class="w-full h-56 md:h-64 object-cover">
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4" data-en="Qabuli Palau" data-fa="قابلی پلو">Qabuli Palau</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-3" data-en="The national dish of Afghanistan - steamed rice with raisins, carrots, and tender lamb" data-fa="غذای ملی افغانستان - برنج بخارپز با کشمش، هویج و گوشت گوسفند نرم">The national dish of Afghanistan - steamed rice with raisins, carrots, and tender lamb</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-3xl font-bold text-food-primary">420 AFN</span>
+                            <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-food-primary to-food-chai text-white rounded-full font-bold hover:scale-110 transition-transform text-sm" data-en="Order" data-fa="سفارش">Order</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&q=80" 
+                         alt="Bolani" 
+                         class="w-full h-56 md:h-64 object-cover">
+                    <div class="p-6 md:p-8">
+                        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4" data-en="Bolani" data-fa="بولانی">Bolani</h3>
+                        <p class="text-sm text-gray-600 mb-4 line-clamp-3" data-en="Traditional Afghan flatbread stuffed with potatoes, herbs, or pumpkin" data-fa="نان تخت افغانی پر شده با سیب زمینی، سبزیجات یا کدو">Traditional Afghan flatbread stuffed with potatoes, herbs, or pumpkin</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-3xl font-bold text-food-primary">180 AFN</span>
+                            <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-food-primary to-food-chai text-white rounded-full font-bold hover:scale-110 transition-transform text-sm" data-en="Order" data-fa="سفارش">Order</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-28 bg-white">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold bg-gradient-to-r from-food-primary to-food-cocoa bg-clip-text text-transparent mb-4 px-4" 
+                    data-en="About Our Restaurant" data-fa="درباره رستوران ما">
+                    About Our Restaurant
+                </h2>
+                <p class="text-lg md:text-xl text-gray-600 px-4" data-en="Where tradition meets taste" data-fa="جایی که سنت با طعم تلاقی میکند">
+                    Where tradition meets taste
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center" id="aboutGrid">
+                <div id="aboutTextContainer">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6" 
+                        data-en="Authentic Flavors Since 2014" data-fa="طعم های اصیل از سال ۲۰۱۴">
+                        Authentic Flavors Since 2014
+                    </h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-sm" 
+                       data-en="SHAKHAH NABAT brings the finest Afghan and international cuisine to Khanabad. Our expert chefs use traditional recipes and fresh ingredients to create unforgettable dining experiences. From authentic Kabuli Pulao to crispy pizzas, every dish is prepared with love and care." 
+                       data-fa="شاخه نبات بهترین غذاهای افغانی و بین المللی را به خان آباد می آورد. سرآشپزهای ماهر ما از دستور العمل های سنتی و مواد تازه برای ایجاد تجربیات غذاخوری فراموش نشدنی استفاده می کنند.">
+                        SHAKHAH NABAT brings the finest Afghan and international cuisine to Khanabad. Our expert chefs use traditional recipes and fresh ingredients to create unforgettable dining experiences. From authentic Kabuli Pulao to crispy pizzas, every dish is prepared with love and care.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+                        <div class="text-center p-3 bg-food-cream rounded-xl">
+                            <p class="text-2xl font-bold text-food-primary">500+</p>
+                            <p class="text-xs text-gray-600" data-en="Happy Customers" data-fa="مشتریان راضی">Happy Customers</p>
+                        </div>
+                        <div class="text-center p-3 bg-food-cream rounded-xl">
+                            <p class="text-2xl font-bold text-food-chai">50+</p>
+                            <p class="text-xs text-gray-600" data-en="Menu Items" data-fa="آیتم های منو">Menu Items</p>
+                        </div>
+                        <div class="text-center p-3 bg-food-cream rounded-xl">
+                            <p class="text-2xl font-bold text-green-500">24/7</p>
+                            <p class="text-xs text-gray-600" data-en="Open" data-fa="باز">Open</p>
+                        </div>
+                    </div>
+                    <button class="px-8 py-4 bg-gradient-to-r from-food-primary to-food-chai text-white rounded-full font-bold hover:scale-105 transition-transform text-sm" 
+                            data-en="Read More" data-fa="بیشتر بخوانید">
+                        Read More
+                    </button>
+                </div>
+                <div class="relative" id="aboutImageContainer">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" 
+                         alt="Restaurant Interior" 
+                         class="rounded-3xl shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-food-primary text-white p-6 rounded-xl shadow-lg">
+                        <p class="text-4xl font-bold">10+</p>
+                        <p class="text-sm" data-en="Years Experience" data-fa="سال تجربه">Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-28 bg-food-cream">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold bg-gradient-to-r from-food-primary to-food-cocoa bg-clip-text text-transparent mb-4 px-4" 
+                    data-en="Contact Us" data-fa="تماس با ما">Contact Us</h2>
+                <p class="text-lg md:text-xl text-gray-600 px-4" data-en="Order now or visit us in Khanabad" data-fa="اکنون سفارش دهید یا از ما در خان آباد دیدن کنید">
+                    Order now or visit us in Khanabad
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="contactGrid">
+                <form class="bg-white p-5 rounded-2xl shadow-xl" id="contactFormContainer">
+                    <div class="mb-3">
+                        <input type="text" id="nameInput" required 
+                               class="w-full px-3 py-2.5 border-2 border-gray-200 rounded-lg focus:border-food-primary focus:outline-none transition text-sm">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" id="emailInput" required 
+                               class="w-full px-3 py-2.5 border-2 border-gray-200 rounded-lg focus:border-food-primary focus:outline-none transition text-sm">
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" id="phoneInput" 
+                               class="w-full px-3 py-2.5 border-2 border-gray-200 rounded-lg focus:border-food-primary focus:outline-none transition text-sm">
+                    </div>
+                    <div class="mb-3">
+                        <textarea rows="3" id="messageInput" required 
+                                  class="w-full px-3 py-2.5 border-2 border-gray-200 rounded-lg focus:border-food-primary focus:outline-none transition resize-none text-sm"></textarea>
+                    </div>
+                    <button type="submit" 
+                            class="w-full px-6 py-3 bg-gradient-to-r from-food-primary to-food-chai text-white font-bold rounded-lg hover:scale-105 transition-transform text-sm" 
+                            data-en="Send Message" data-fa="ارسال پیام">
+                        Send Message
+                    </button>
+                </form>
+                <div class="space-y-4" id="contactInfoContainer">
+                    <div class="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:scale-105 transition-transform">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-food-primary to-food-chai rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-800 mb-1" data-en="Location" data-fa="موقعیت">Location</h4>
+                            <p class="text-xs text-gray-600">Kunduz, Khanabad</p>
+                            <p class="text-xs text-gray-600 font-vazir">کندز، بندر خان آباد</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:scale-105 transition-transform">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-food-primary to-food-chai rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-800 mb-1" data-en="Email" data-fa="ایمیل">Email</h4>
+                            <p class="text-xs text-gray-600">info@shakhahnabat.com</p>
+                            <p class="text-xs text-gray-600">contact@shakhahnabat.com</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 p-4 bg-white rounded-xl shadow-md hover:scale-105 transition-transform">
+                        <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-food-primary to-food-chai rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-800 mb-1" data-en="Phone" data-fa="تلفن">Phone</h4>
+                            <p class="text-xs text-gray-600">+93 XXX XXX XXX</p>
+                            <p class="text-xs text-gray-600">+93 XXX XXX XXX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold bg-gradient-to-r from-food-primary via-food-chai to-food-cocoa bg-clip-text text-transparent mb-4">
+                        🍽️ SHAKHAH NABAT
+                    </h3>
+                    <p class="font-vazir text-gray-400 mb-4">رستوران شاخه نبات</p>
+                    <p class="text-gray-400 text-sm" data-en="Authentic Afghan & International Cuisine" data-fa="غذاهای اصیل افغانی و بین المللی">
+                        Authentic Afghan & International Cuisine
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-en="Quick Links" data-fa="لینک های سریع">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#home" class="hover:text-food-primary transition" data-en="Home" data-fa="خانه">Home</a></li>
+                        <li><a href="#menu" class="hover:text-food-primary transition" data-en="Menu" data-fa="منو">Menu</a></li>
+                        <li><a href="#specialties" class="hover:text-food-primary transition" data-en="Specialties" data-fa="غذاهای ویژه">Specialties</a></li>
+                        <li><a href="#about" class="hover:text-food-primary transition" data-en="About" data-fa="درباره">About</a></li>
+                        <li><a href="#contact" class="hover:text-food-primary transition" data-en="Contact" data-fa="تماس">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4" data-en="Opening Hours" data-fa="ساعات کاری">Opening Hours</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li data-en="Saturday - Thursday: 10:00 AM - 11:00 PM" data-fa="شنبه تا پنجشنبه: ۱۰:۰۰ - ۲۳:۰۰">Saturday - Thursday: 10:00 AM - 11:00 PM</li>
+                        <li data-en="Friday: 12:00 PM - 11:00 PM" data-fa="جمعه: ۱۲:۰۰ - ۲۳:۰۰">Friday: 12:00 PM - 11:00 PM</li>
+                        <li class="text-yellow-400 font-bold" data-en="Delivery 24/7" data-fa="تحویل ۲۴/۷">Delivery 24/7</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+                <p data-en="© 2024 SHAKHAH NABAT Restaurant. All rights reserved." data-fa="© ۲۰۲۴ رستوران شاخه نبات. تمامی حقوق محفوظ است.">
+                    © 2024 SHAKHAH NABAT Restaurant. All rights reserved.
+                </p>
+                <p class="mt-2 text-xs">
+                    <span data-en="Kunduz, Khanabad" data-fa="کندز، بندر خان آباد">Kunduz, Khanabad</span> | 
+                    <a href="tel:+93XXXXXXXXX" class="hover:text-food-primary transition">+93 XXX XXX XXX</a>
+                </p>
+                <p class="mt-3 text-xs text-gray-500">
+                    <span data-en="Developed by S. M. Mottaqi" data-fa="طراحی و توسعه توسط سید محسن متقی">
+                        Developed by <a href="#" class="text-food-primary hover:text-food-chai transition">S. M. Mottaqi</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Enhanced language toggle with layout swapping
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            const body = document.body;
+            const html = document.documentElement;
+            const langButton = document.querySelector('.lang-text');
+            
+            if (currentLang === 'en') {
+                currentLang = 'fa';
+                body.classList.add('rtl');
+                html.setAttribute('lang', 'fa');
+                html.setAttribute('dir', 'rtl');
+                langButton.textContent = 'English';
+                
+                // Update text content
+                document.querySelectorAll('[data-fa]').forEach(element => {
+                    element.textContent = element.getAttribute('data-fa');
+                });
+                
+                // Update form placeholders
+                updateFormPlaceholders('fa');
+                
+                // Swap About section: FA = Image LEFT, Text RIGHT
+                swapAboutLayout('fa');
+                
+                // Swap Contact section: FA = Form RIGHT, Info LEFT
+                swapContactLayout('fa');
+                
+            } else {
+                currentLang = 'en';
+                body.classList.remove('rtl');
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                langButton.textContent = 'فارسی';
+                
+                // Update text content
+                document.querySelectorAll('[data-en]').forEach(element => {
+                    element.textContent = element.getAttribute('data-en');
+                });
+                
+                // Update form placeholders
+                updateFormPlaceholders('en');
+                
+                // Swap About section: EN = Image RIGHT, Text LEFT
+                swapAboutLayout('en');
+                
+                // Swap Contact section: EN = Form LEFT, Info RIGHT
+                swapContactLayout('en');
+            }
+        }
+
+        function swapAboutLayout(lang) {
+            const aboutGrid = document.getElementById('aboutGrid');
+            const imageContainer = document.getElementById('aboutImageContainer');
+            const textContainer = document.getElementById('aboutTextContainer');
+            
+            if (lang === 'fa') {
+                // Persian: Image on LEFT (first), Text on RIGHT (second)
+                aboutGrid.innerHTML = '';
+                aboutGrid.appendChild(imageContainer);
+                aboutGrid.appendChild(textContainer);
+            } else {
+                // English: Text on LEFT (first), Image on RIGHT (second)
+                aboutGrid.innerHTML = '';
+                aboutGrid.appendChild(textContainer);
+                aboutGrid.appendChild(imageContainer);
+            }
+        }
+
+        function swapContactLayout(lang) {
+            const contactGrid = document.getElementById('contactGrid');
+            const infoContainer = document.getElementById('contactInfoContainer');
+            const formContainer = document.getElementById('contactFormContainer');
+            
+            if (lang === 'fa') {
+                // Persian: Info LEFT (first), Form RIGHT (second)
+                contactGrid.innerHTML = '';
+                contactGrid.appendChild(infoContainer);
+                contactGrid.appendChild(formContainer);
+            } else {
+                // English: Form LEFT (first), Info RIGHT (second)
+                contactGrid.innerHTML = '';
+                contactGrid.appendChild(formContainer);
+                contactGrid.appendChild(infoContainer);
+            }
+        }
+
+        // Update form placeholders based on language
+        function updateFormPlaceholders(lang) {
+            const nameInput = document.getElementById('nameInput');
+            const emailInput = document.getElementById('emailInput');
+            const phoneInput = document.getElementById('phoneInput');
+            const messageInput = document.getElementById('messageInput');
+            
+            if (lang === 'fa') {
+                if (nameInput) {
+                    nameInput.placeholder = 'نام و نام خانوادگی';
+                    nameInput.style.direction = 'rtl';
+                    nameInput.style.textAlign = 'right';
+                }
+                if (emailInput) {
+                    emailInput.placeholder = 'ایمیل (اختیاری)';
+                    emailInput.style.direction = 'rtl';
+                    emailInput.style.textAlign = 'right';
+                }
+                if (phoneInput) {
+                    phoneInput.placeholder = 'شماره تلفن';
+                    phoneInput.style.direction = 'rtl';
+                    phoneInput.style.textAlign = 'right';
+                }
+                if (messageInput) {
+                    messageInput.placeholder = 'پیام شما';
+                    messageInput.style.direction = 'rtl';
+                    messageInput.style.textAlign = 'right';
+                }
+            } else {
+                if (nameInput) {
+                    nameInput.placeholder = 'Full Name';
+                    nameInput.style.direction = 'ltr';
+                    nameInput.style.textAlign = 'left';
+                }
+                if (emailInput) {
+                    emailInput.placeholder = 'Email (Optional)';
+                    emailInput.style.direction = 'ltr';
+                    emailInput.style.textAlign = 'left';
+                }
+                if (phoneInput) {
+                    phoneInput.placeholder = 'Phone Number';
+                    phoneInput.style.direction = 'ltr';
+                    phoneInput.style.textAlign = 'left';
+                }
+                if (messageInput) {
+                    messageInput.placeholder = 'Your Message';
+                    messageInput.style.direction = 'ltr';
+                    messageInput.style.textAlign = 'left';
+                }
+            }
+        }
+
+        // Initialize placeholders and layout on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            updateFormPlaceholders('en');
+            swapAboutLayout('en');
+            swapContactLayout('en');
+        });
+    </script>
+</body>
+</html>
