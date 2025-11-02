@@ -12,7 +12,7 @@ body.rtl {
 }
 
 body.rtl .logo-area {
-    flex-direction: row-reverse;
+    flex-direction: row; /* keep icon first (right) then text in RTL */
 }
 
 body.rtl #mobileMenu {
@@ -142,6 +142,10 @@ body.rtl #mobileMenu {
     width: 10px;
 }
 
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
@@ -191,7 +195,8 @@ input:focus, textarea:focus {
         text-align: right;
     }
     
-    body.rtl .flex {
+    /* Navbar row: logo right, hamburger left on mobile RTL */
+    body.rtl #navRow {
         flex-direction: row-reverse;
     }
     
@@ -201,6 +206,23 @@ input:focus, textarea:focus {
     
     body.rtl .category-btn {
         text-align: center;
+    }
+    
+    /* Mobile menu layout as row in RTL */
+    body.rtl #mobileMenu > div {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+    }
+    body.rtl #mobileMenu a.nav-link {
+        padding: 6px 10px;
+        border-radius: 9999px;
+    }
+    
+    /* Contact cards RTL on mobile */
+    body.rtl .contact-card {
+        flex-direction: row-reverse;
     }
 }
 
